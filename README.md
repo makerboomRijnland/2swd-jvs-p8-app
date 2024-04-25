@@ -34,3 +34,7 @@ static/: Deze map bevat statische bestanden die door de applicatie worden geserv
 
 ### .gitignore
 .gitignore: Dit bestand bevat een lijst van bestanden en mappen die niet moeten worden bijgehouden door Git.
+
+## ORM
+- [ActiveRecord](https://www.npmjs.com/package/activerecord)
+- [TypeORM](https://typeorm.io/)
