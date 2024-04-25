@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="main-header">
+        <h1>Fitness Tracker</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="#" class="login">Login</a>
+            <a href="#" class="logout">Logout</a>
+            <a href="#" class="register">Register</a>
+            <a href="#" class="profile">Profile</a>
+        </nav>
+    </header>
+
+    <main id="content">
+        <section id="dashboard">
+            <article id="tracker">
+                <h2>Today's Activity</h2>
+                <p>Track your fitness activity for the day.</p>
+                <button id="start-activity">Start Activity</button>
+            </article>
+    
+            <article id="history">
+                <h2>Activity History</h2>
+                <p>View your past fitness activities.</p>
+                <button id="view-history">View History</button>
+            </article>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <p>&copy; 2023 Fitness Tracker</p>
+    </footer>
+
+    <dialog id="login-dialog">
+        <form method="dialog">
+            <h2>Login</h2>
+            <p>
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" name="login[email]" required>
+            </p>
+            <p>
+                <label for="password">Password</label>
+                <input type="password" id="login-password" name="login[password]" required>
+            </p>
+            <p>
+                <button>Cancel</button>
+                <button type="submit">Login</button>
+            </p>
+        </form>
+    </dialog>
+
+    <dialog id="logout-dialog">
+        <form method="dialog">
+            <h2>Logout</h2>
+            <p>
+                Are you sure?
+            </p>
+            <p>
+                <button>Cancel</button>
+                <button type="submit">Logout</button>
+            </p>
+        </form>
+    </dialog>
+</body>
+</html>
