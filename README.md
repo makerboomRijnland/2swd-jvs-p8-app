@@ -26,7 +26,7 @@ Wat betreft de structuur van de bestanden en mappen:
 ### package.json
 package.json: Dit bestand bevat metadata over het project en de lijst van afhankelijkheden die nodig zijn om het project te draaien.
 
-### routes.json
+### routes/
 routes/: Deze map bevat de routebestanden voor de applicatie. In dit geval is er een api.js bestand dat de API-routes voor de applicatie definieert.
 
 ### static/
