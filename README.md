@@ -12,7 +12,7 @@ Kloon de repository: Kloon de repository naar uw lokale machine met behulp van G
 ### Packages installeren
 Open het project in jouw editor en open een terminal in dezelfde map.
 
-Installeer de afhankelijkheden: Voer het commando npm install uit in de terminal. Dit commando leest het package.json bestand en installeert alle benodigde afhankelijkheden voor het project.
+Installeer de afhankelijkheden: Voer het commando `npm install` uit in de terminal. Dit commando leest het package.json bestand en installeert alle benodigde afhankelijkheden voor het project.
 
 ### Start de applicatie
 Start de applicatie: Voer het commando `npm start` uit in de terminal. Dit start de Express-server op de poort die is gedefinieerd in het [app.js](command:_github.copilot.openSymbolInFile?%5B%22app.js%22%2C%22app.js%22%5D "app.js") bestand (standaard 3000).
