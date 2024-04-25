@@ -8,6 +8,9 @@ export class Application {
     }
 
     updateHTML() {
-        
+        // Update links when user is not logged in
+        document.querySelector("#main-header .login").style.display = "inline";
+        document.querySelector("#main-header .logout").style.display = "none";
+        document.querySelector("#main-header .register").style.display = "inline";
     }
 }
