@@ -6,11 +6,13 @@
     <title>Fitness Tracker</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="script.js"></script>
 </head>
 <body>
     <header id="main-header">
         <h1>Fitness Tracker</h1>
-        <nav>
+        <nav class="opacity-0">
             <a href="/">Home</a>
             <a href="#" class="login">Login</a>
             <a href="#" class="logout">Logout</a>
@@ -36,7 +38,7 @@
     </main>
 
     <footer id="main-footer">
-        <p>&copy; 2023 Fitness Tracker</p>
+        <p>&copy; 2024 Fitness Tracker</p>
     </footer>
 
     <dialog id="login-dialog">
@@ -51,7 +53,7 @@
                 <input type="password" id="login-password" name="login[password]" required>
             </p>
             <p>
-                <button>Cancel</button>
+                <button class="closeDialog">Cancel</button>
                 <button type="submit">Login</button>
             </p>
         </form>
