@@ -1,4 +1,4 @@
-import "/src/User.js";
+import {User} from "/src/User.js";
 
 
 export class Application {

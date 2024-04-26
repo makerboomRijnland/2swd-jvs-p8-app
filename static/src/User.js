@@ -1,6 +1,6 @@
 
 
-export default class User {
+export class User {
     username;
 
     constructor (username) {
