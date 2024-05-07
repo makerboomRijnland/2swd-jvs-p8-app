@@ -4,8 +4,8 @@ import { User } from "../app/models/user.js";
 const router = Router();
 
 router.post("/login", async (request, response) => {
-    const { username, password } = request.query;
-    const user = await User.findOne({ where: { username, password } });
+    const { username, password } = request.query.user || {};
+    const user = await User.findOne({ where: { username, passwordHash: password } });
 
     if (user) {
         request.session.userId = user.id;
@@ -18,8 +18,6 @@ router.post("/login", async (request, response) => {
 });
 
 router.post("/logout", async (request, response) => {
-    const { username, password } = request.query;
-
     if (request.session.userId) {
         delete request.session.userId;
         response.send({ status: "Success" });
@@ -31,12 +29,13 @@ router.post("/logout", async (request, response) => {
 });
 
 router.post("/register", async (request, response) => {
-    const { username, password } = request.query;
-    const user = await User.create({ username, password });
+    const { username, password, email } = request.query.user || {};
+    const user = await User.create({ username, email, passwordHash: password });
 
     if (user) {
         response.send({ status: "Success", user });
-
+        request.session.userId = user.id;
+        
     } else {
         response.status(401);
         response.send({ status: "Failed" });
