@@ -41,32 +41,54 @@
     </footer>
 
     <dialog id="login-dialog">
-        <form method="dialog">
+        <form method="dialog" id="login-form">
             <h2>Login</h2>
             <p>
-                <label for="login-email">Email</label>
-                <input type="email" id="login-email" name="login[email]" required>
+                <label for="login-username">Username</label>
+                <input type="text" id="login-username" name="login[username]" required>
             </p>
             <p>
-                <label for="password">Password</label>
+                <label for="login-password">Password</label>
                 <input type="password" id="login-password" name="login[password]" required>
             </p>
             <p>
-                <button>Cancel</button>
-                <button type="submit">Login</button>
+                <button id="login-cancel">Cancel</button>
+                <button type="submit" id="login-submit">Login</button>
+            </p>
+        </form>
+    </dialog>
+
+    <dialog id="register-dialog">
+        <form method="dialog" id="register-form">
+            <h2>Login</h2>
+            <p>
+                <label for="login-username">Email</label>
+                <input type="text" id="register-username" name="register[username]" required>
+            </p>
+            <p>
+                <label for="login-email">Email</label>
+                <input type="email" id="register-email" name="register[email]" required>
+            </p>
+            <p>
+                <label for="register-password">Password</label>
+                <input type="password" id="register-password" name="register[password]" required>
+            </p>
+            <p>
+                <button id="register-cancel">Cancel</button>
+                <button type="submit" id="register-submit">Register</button>
             </p>
         </form>
     </dialog>
 
     <dialog id="logout-dialog">
-        <form method="dialog">
+        <form method="dialog" id="logout-form">
             <h2>Logout</h2>
             <p>
                 Are you sure?
             </p>
             <p>
-                <button>Cancel</button>
-                <button type="submit">Logout</button>
+                <button id="logout-cancel">Cancel</button>
+                <button id="logout-submit" type="submit">Logout</button>
             </p>
         </form>
     </dialog>

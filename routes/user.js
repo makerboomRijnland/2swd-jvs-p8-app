@@ -4,7 +4,7 @@ import { User } from "../app/models/user.js";
 const router = Router();
 
 router.post("/login", async (request, response) => {
-    const { username, password } = request.query.user || {};
+    const { username, password } = request.query.login || {};
     const user = await User.findOne({ where: { username, passwordHash: password } });
 
     if (user) {
@@ -29,7 +29,7 @@ router.post("/logout", async (request, response) => {
 });
 
 router.post("/register", async (request, response) => {
-    const { username, password, email } = request.query.user || {};
+    const { username, password, email } = request.query.register || {};
     const user = await User.create({ username, email, passwordHash: password });
 
     if (user) {

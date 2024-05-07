@@ -1,4 +1,4 @@
-import { User } from "./user.js";
+import { User } from "./models/user.js";
 
 export class Application {
     user = null;
@@ -14,12 +14,31 @@ export class Application {
         this.updateHTML();
         document.querySelector("#main-header .login").addEventListener("click", (event) => {
             event.preventDefault();
-            this.login("admin", "admin");
+            this.showLoginDialog();
         });
 
         document.querySelector("#main-header .logout").addEventListener("click", (event) => {
             event.preventDefault();
+            this.showLogoutDialog();
+        });
+
+        document.querySelector("#main-header .register").addEventListener("click", (event) => {
+            event.preventDefault();
+            this.showRegisterDialog();
+        });
+
+        document.querySelector("#login-submit").addEventListener("click", (event) => {
+            event.preventDefault();
+            const username = document.querySelector("#login-username").value;
+            const password = document.querySelector("#login-password").value;
+            this.login(username, password);
+            document.querySelector("#login-dialog").close();
+        });
+
+        document.querySelector("#logout-submit").addEventListener("click", (event) => {
+            event.preventDefault();
             this.logout();
+            document.querySelector("#logout-dialog").close();
         });
 
         console.log("Application intialized");
@@ -43,12 +62,34 @@ export class Application {
         }
     }
 
-    login(username, password) {
-        this.user = new User({
-            username: username,
-            password: password,
-        });
+    showLoginDialog() {
+        const loginDialog = document.querySelector("#login-dialog");
+        loginDialog.showModal();
+    }
 
+    showLogoutDialog() {
+        const logoutDialog = document.querySelector("#logout-dialog");
+        logoutDialog.showModal();
+    }
+
+    showRegisterDialog() {
+        const registeDialog = document.querySelector("#register-dialog");
+        registeDialog.showModal();
+    }
+
+    register(username, email, password) {
+        const user = User.register(username, email, password);
+        if(!user) return; // @TODO Show error message
+        this.user = user;
+        
+        this.updateHTML();
+    }
+
+    login(username, password) {
+        const user = User.login(username, password);
+        if(!user) return; // @TODO Show error message
+        this.user = user;
+        
         this.updateHTML();
     }
 
