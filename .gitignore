@@ -80,3 +80,5 @@ dist/
 
 # DynamoDB Local files
 .dynamodb/
+
+*.zip
