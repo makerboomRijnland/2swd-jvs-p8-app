@@ -41,6 +41,16 @@ export class Application {
             document.querySelector("#logout-dialog").close();
         });
 
+        document.querySelector("#register-submit").addEventListener("click", (event) => {
+            event.preventDefault();
+            const username = document.querySelector("#register-username").value;
+            const email = document.querySelector("#register-email").value;
+            const password = document.querySelector("#register-password").value;
+
+            this.register(username, email, password);
+            document.querySelector("#register-dialog").close();
+        });
+
         console.log("Application intialized");
     }
 
@@ -77,17 +87,23 @@ export class Application {
         registeDialog.showModal();
     }
 
-    register(username, email, password) {
-        const user = User.register(username, email, password);
-        if(!user) return; // @TODO Show error message
+    async register(username, email, password) {
+        const user = await User.register(username, email, password);
+        if(!user){
+            alert('Register failed');
+            return; // @TODO Show error message
+        } 
         this.user = user;
         
         this.updateHTML();
     }
 
-    login(username, password) {
-        const user = User.login(username, password);
-        if(!user) return; // @TODO Show error message
+    async login(username, password) {
+        const user = await User.login(username, password);
+        if(!user){
+            alert('Login failed');
+            return; // @TODO Show error message
+        } 
         this.user = user;
         
         this.updateHTML();
