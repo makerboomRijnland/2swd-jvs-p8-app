@@ -81,4 +81,8 @@ dist/
 # DynamoDB Local files
 .dynamodb/
 
+# Zip archives
 *.zip
+
+# Database
+*.sqlite3
